@@ -1,0 +1,3 @@
+<% css_id = "#new_beta_user_form" %>
+$("<%= css_id %>").replaceWith(function() { return "<%= escape_javascript(render "beta_users/thank_you", :beta_user => @beta_user) %>"});
+$("<%= css_id %>").hide().fadeIn('slow');

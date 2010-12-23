@@ -1,0 +1,7 @@
+Beta invite system.
+
+prereqs
+current_user, require_super_user, require_no_user
+
+setup
+form, email customizations
