@@ -1,7 +1,6 @@
 class BigBeta::BetaUsersController < BigBetaController
   unloadable
   before_filter :require_super_user, :except => [:new, :create]
-  before_filter :require_no_user, :only => [:new, :create]
 
   # GET /big_beta/beta_users
   # GET /big_beta/beta_users.xml
@@ -48,10 +47,13 @@ class BigBeta::BetaUsersController < BigBetaController
 
     respond_to do |format|
       if @beta_user.save
+        format.js
         format.html { redirect_to("/", :notice => "You've been added to the waiting list.") }
         format.xml  { render :xml => @beta_user, :status => :created, :location => @beta_user }
-        format.js
       else
+        # TODO: 2011-01-08 <tony+bigbeta@tonystubblebine.com> -- Need better
+        # error handling for xjs requests.
+        format.js
         format.html { render :action => "new" }
         format.xml  { render :xml => @beta_user.errors, :status => :unprocessable_entity }
       end
