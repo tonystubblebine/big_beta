@@ -9,11 +9,12 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Tony Stubblebine"]
-  s.date = %q{2011-01-08}
+  s.date = %q{2011-01-11}
   s.email = %q{tony+bigbeta@tonystubblebine.com}
   s.extra_rdoc_files = [
     "LICENSE",
-    "README.rdoc"
+    "README.rdoc",
+    "TODO"
   ]
   s.files = [
     "app/controllers/big_beta/beta_users_controller.rb",
@@ -23,6 +24,7 @@ Gem::Specification.new do |s|
     "app/views/big_beta/beta_users/_form_fields.html.erb",
     "app/views/big_beta/beta_users/_inline_signup.html.erb",
     "app/views/big_beta/beta_users/_show.html.erb",
+    "app/views/big_beta/beta_users/_thank_you.html.erb",
     "app/views/big_beta/beta_users/create.js.erb",
     "app/views/big_beta/beta_users/edit.html.erb",
     "app/views/big_beta/beta_users/index.html.erb",
