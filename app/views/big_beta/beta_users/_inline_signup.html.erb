@@ -4,6 +4,7 @@
   <% form_for(beta_user, :remote => true) do |f| %>
      <%= f.label :email %> 
      <%= f.text_field :email %>
+     <%= f.hidden_field :source %>
      <%= f.submit submit %>
   <% end %>
 </div><!-- #beta_user_signup -->
