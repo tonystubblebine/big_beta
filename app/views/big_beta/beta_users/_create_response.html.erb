@@ -6,10 +6,12 @@
   <%# Subtle trick: we're reusing the value of submit as a way to keep the same value as was used in inline_signup originally. %>
 <% else %>
   <div id="beta_user_signup">
-    <% if beta_user.duplicate_email_error? %>
-      You've already signed up for the beta with this email address. We'll get back to you as soon as we open our private beta.
-    <% else %>
-      Thank you for signing up! We'll get back to you as soon as we open our private beta.
-    <% end %>
+    <div class="big_beta_message">
+      <% if beta_user.duplicate_email_error? %>
+        You've already signed up for the beta with this email address. We'll get back to you as soon as we open our private beta.
+      <% else %>
+        Thank you for signing up! We'll get back to you as soon as we open our private beta.
+      <% end %>
+    </div>
   </div><!-- #beta_user_signup -->
 <% end %>
