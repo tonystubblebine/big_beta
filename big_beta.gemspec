@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{big_beta}
-  s.version = "0.0.2"
+  s.version = "0.0.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Tony Stubblebine"]
@@ -20,11 +20,12 @@ Gem::Specification.new do |s|
     "app/controllers/big_beta/beta_users_controller.rb",
     "app/controllers/big_beta_controller.rb",
     "app/models/big_beta/beta_user.rb",
+    "app/views/big_beta/beta_users/_create_response.html.erb",
     "app/views/big_beta/beta_users/_form.html.erb",
     "app/views/big_beta/beta_users/_form_fields.html.erb",
     "app/views/big_beta/beta_users/_inline_signup.html.erb",
     "app/views/big_beta/beta_users/_show.html.erb",
-    "app/views/big_beta/beta_users/_thank_you.html.erb",
+    "app/views/big_beta/beta_users/create.html.erb",
     "app/views/big_beta/beta_users/create.js.erb",
     "app/views/big_beta/beta_users/edit.html.erb",
     "app/views/big_beta/beta_users/index.html.erb",
