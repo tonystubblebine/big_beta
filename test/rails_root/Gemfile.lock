@@ -1,7 +1,7 @@
 PATH
   remote: ../..
   specs:
-    big_beta (0.0.1)
+    big_beta (0.0.2)
 
 PATH
   remote: /home/tony/projects/big_auth

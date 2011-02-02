@@ -48,13 +48,17 @@ class BigBeta::BetaUsersController < BigBetaController
     respond_to do |format|
       if @beta_user.save
         format.js
-        format.html { redirect_to("/", :notice => "You've been added to the waiting list.") }
+        format.html
         format.xml  { render :xml => @beta_user, :status => :created, :location => @beta_user }
       else
-        # TODO: 2011-01-08 <tony+bigbeta@tonystubblebine.com> -- Need better
-        # error handling for xjs requests.
         format.js
-        format.html { render :action => "new" }
+        format.html do
+          if @beta_user.duplicate_email_error?
+            render
+          else
+            render :action => "new"
+          end 
+        end 
         format.xml  { render :xml => @beta_user.errors, :status => :unprocessable_entity }
       end
     end

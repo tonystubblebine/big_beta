@@ -25,7 +25,7 @@ class BetaUsersControllerTest < ActionController::TestCase
       post :create, :big_beta_beta_user => {:email => "createtest@example.com"}
     end
 
-    assert_response :redirect
+    assert_response :success
   end
 
   test "should show beta_user" do

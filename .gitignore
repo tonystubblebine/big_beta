@@ -1,0 +1,7 @@
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/**/*
+Gemfile.lock
+test/rails_root/log/*.log
+test/rails_root/Gemfile.lock

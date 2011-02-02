@@ -1,0 +1,15 @@
+<% if beta_user.invalid_email_format_error? %>
+  <%= render("big_beta/beta_users/inline_signup", :beta_user    => beta_user,
+                                                  :instructions => "That doesn't appear to be a valid email address.",
+                                                  :source       => beta_user.source,
+                                                  :submit       => params[:commit] || "Submit") %>
+  <%# Subtle trick: we're reusing the value of submit as a way to keep the same value as was used in inline_signup originally. %>
+<% else %>
+  <div id="beta_user_signup">
+    <% if beta_user.duplicate_email_error? %>
+      You've already signed up for the beta with this email address. We'll get back to you as soon as we open our private beta.
+    <% else %>
+      Thank you for signing up! We'll get back to you as soon as we open our private beta.
+    <% end %>
+  </div><!-- #beta_user_signup -->
+<% end %>

@@ -1,4 +1,10 @@
-<h1>New Beta User</h1>
-
-<%= render 'form' %>
-
+<% if @beta_user.invalid_email_format_error? %>
+  <%= render("big_beta/beta_users/inline_signup", :beta_user    => @beta_user,
+                                                  :instructions => "That doesn't appear to be a valid email address.",
+                                                  :source       => @beta_user.source,
+                                                  :submit       => params[:commit] || "Submit") %>
+<% else %>
+  <%= render("big_beta/beta_users/inline_signup", :beta_user    => @beta_user,
+                                                  :instructions => "Signup for our beta.",
+                                                  :submit       => params[:commit] || "Submit") %>
+<% end %>
