@@ -1,7 +1,16 @@
-Beta invite system.
+= big_beta
 
-prereqs
-current_user, require_super_user, require_no_user
+<em>Pre-alpha non-functional version.</em>
 
-setup
-form, email customizations
+Rails 3 engine for handling beta signups and invitations. 
+
+== Installation
+1. blah blah blah
+2. prereqs: current_user, require_super_user, require_no_user
+3. setup: form, email customizations
+
+== Features for 0.1
+
+1. Email capture form with in-line UJS response
+2. Export full list of beta users
+3. Invite system with token tracking
