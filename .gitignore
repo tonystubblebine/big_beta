@@ -3,5 +3,6 @@ db/*.sqlite3
 log/*.log
 tmp/**/*
 Gemfile.lock
+config/database.yml
 test/rails_root/log/*.log
 test/rails_root/Gemfile.lock
