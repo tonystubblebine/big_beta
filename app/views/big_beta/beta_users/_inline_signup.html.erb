@@ -1,10 +1,14 @@
 <div id="beta_user_signup">
-  <div class="big_beta_message"><%= instructions %></div>
+  <% if session[:beta_user_id] %>
+    Welcome back. Thank you for signing up.
+  <% else %>
+    <div class="big_beta_message"><%= instructions %></div>
   
-  <% form_for(beta_user, :remote => true) do |f| %>
-     <%= f.label :email %> 
-     <%= f.text_field :email %>
-     <%= f.hidden_field :source %>
-     <%= f.submit submit %>
+    <% form_for(beta_user, :remote => true) do |f| %>
+      <%= f.label :email %> 
+      <%= f.text_field :email %>
+      <%= f.hidden_field :source %>
+      <%= f.submit submit %>
+    <% end %>
   <% end %>
 </div><!-- #beta_user_signup -->

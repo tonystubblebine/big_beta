@@ -47,6 +47,7 @@ class BigBeta::BetaUsersController < BigBetaController
 
     respond_to do |format|
       if @beta_user.save
+        session[:beta_user_id] = @beta_user.id
         format.js
         format.html
         format.xml  { render :xml => @beta_user, :status => :created, :location => @beta_user }
