@@ -1,7 +1,11 @@
 Rails::Application.routes.draw do
 
+
   namespace :big_beta do
     resources :beta_users
+    get "invitations/index"
+    get "invitations/new"
+    get "invitations/create"
   end
 
   # The priority is based upon order of creation:

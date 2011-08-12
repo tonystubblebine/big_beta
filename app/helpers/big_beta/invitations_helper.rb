@@ -1,0 +1,2 @@
+module BigBeta::InvitationsHelper
+end

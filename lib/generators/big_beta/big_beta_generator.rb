@@ -1,8 +1,10 @@
 require 'rails/generators'
 require 'rails/generators/migration'
+require 'big_library/generators'
 
 class BigBetaGenerator < Rails::Generators::Base
   include Rails::Generators::Migration
+  include BigLibrary::Generators
 
   def self.source_root
     File.join(File.dirname(__FILE__), 'templates')
@@ -18,7 +20,14 @@ class BigBetaGenerator < Rails::Generators::Base
     end
   end
   
-  def create_migration_file
-    migration_template 'migration.rb', 'db/migrate/create_beta_users.rb'
+  def create_migration_files
+    %w{create_beta_users}.each do |migration|
+      create_migration_file(migration)
+    end
   end
+
+  def copy_initializer
+    template 'big_beta.rb', 'config/initializers/big_beta.rb'
+  end
+
 end
