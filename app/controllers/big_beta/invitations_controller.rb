@@ -9,7 +9,7 @@ class BigBeta::InvitationsController < ApplicationController
   end
 
   def create
-    @beta_user = BetaUser.find_or_create_by_email(params[:email])
+    @beta_user = BigBeta::BetaUser.find_or_create_by_email(params[:email])
     @beta_user.set_token!
     @message = params[:message]
 
