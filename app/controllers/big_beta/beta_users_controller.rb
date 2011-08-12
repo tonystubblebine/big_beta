@@ -8,7 +8,7 @@ class BigBeta::BetaUsersController < BigBetaController
     @beta_users = BigBeta::BetaUser.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html { render(:layout => "admin") } # index.html.erb
       format.xml  { render :xml => @beta_users }
     end
   end

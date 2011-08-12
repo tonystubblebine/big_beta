@@ -1,5 +1,6 @@
 class BigBeta::InvitationsController < ApplicationController
   before_filter :require_super_user
+  layout "admin"
 
   def index
     @beta_users = BigBeta::BetaUser.all
