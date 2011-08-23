@@ -47,6 +47,7 @@ class BigBeta::BetaUsersController < BigBetaController
 
     respond_to do |format|
       if @beta_user.save
+        BigBetaMailer.deliver_thank_you_for_signing_up(@beta_user.email)        
         session[:beta_user_id] = @beta_user.id
         format.js
         format.html

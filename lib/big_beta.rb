@@ -3,6 +3,8 @@ module BigBeta
   
   mattr_accessor :invite_to_url
   @@invite_to_url = nil
+  mattr_accessor :from_email_address
+  @@from_email_address = nil #"do-not-reply@example.com"
  
   def self.setup
     yield self
