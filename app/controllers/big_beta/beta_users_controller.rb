@@ -50,15 +50,15 @@ class BigBeta::BetaUsersController < BigBetaController
         BigBetaMailer.deliver_thank_you_for_signing_up(@beta_user.email)        
         session[:beta_user_id] = @beta_user.id
         format.js
-        format.html
+        format.html { redirect_to("/", :notice => "Thank you for submitting your email.") }
         format.xml  { render :xml => @beta_user, :status => :created, :location => @beta_user }
       else
         format.js
         format.html do
           if @beta_user.duplicate_email_error?
-            render
+            redirect_to("/", :notice => "Duplicate email.")
           else
-            render :action => "new"
+            redirect_to("/", :notice => "That doesn't look like a valid email.")
           end 
         end 
         format.xml  { render :xml => @beta_user.errors, :status => :unprocessable_entity }
