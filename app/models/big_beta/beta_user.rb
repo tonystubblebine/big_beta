@@ -18,7 +18,7 @@ class BetaUser < ActiveRecord::Base
   end
 
   def set_token!
-    self.token = ActiveSupport::SecureRandom.hex(12)
+    self.token = SecureRandom.hex(12)
     self.set_token! unless BetaUser.find_by_token(self.token).nil?
   end
 end
