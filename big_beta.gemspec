@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "big_beta"
-  s.version = "0.0.13"
+  s.version = "0.0.14"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Tony Stubblebine"]
-  s.date = "2011-12-31"
+  s.date = "2012-01-02"
   s.email = "tony+bigbeta@tonystubblebine.com"
   s.extra_rdoc_files = [
     "LICENSE",
@@ -41,10 +41,6 @@ Gem::Specification.new do |s|
     "app/views/layouts/admin.html.erb",
     "config/application.rb",
     "config/boot.rb",
-    "config/environment.rb",
-    "config/environments/development.rb",
-    "config/environments/production.rb",
-    "config/environments/test.rb",
     "config/locales/en.yml",
     "config/routes.rb",
     "lib/big_beta.rb",
