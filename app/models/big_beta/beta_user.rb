@@ -7,7 +7,7 @@ class BetaUser < ActiveRecord::Base
   validates_format_of :email, :message => "does not appear to be a valid email address",
                               :if => Proc.new{ |user| !user.email.blank? },
                               :with => /^[A-Za-z0-9][^@]*@((\w+\-+)|(\w+\.))*\w{1,63}\.[a-zA-Z]{2,6}$/i
-#  validates_uniqueness_of :email, :case_sensitive => false, :message => "is already on the beta list"
+  validates_uniqueness_of :email, :case_sensitive => false, :message => "is already on the beta list"
 
   def duplicate_email_error?
     self.errors and self.errors[:email] and self.errors[:email].include?("is already on the beta list") ? true : false
