@@ -1,6 +1,8 @@
 module BigBeta
 class BetaUser < ActiveRecord::Base
   unloadable
+  attr_protected :token
+  attr_protected :status
   belongs_to :user 
   before_create :set_token!
   validates_presence_of :email
